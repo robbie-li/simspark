@@ -2,7 +2,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: fpscontroller.cpp 179 2010-02-28 01:33:40Z marianbuchta $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -85,7 +85,7 @@ FPSController::PrepareUpdate(Matrix& matrix, Matrix& fwd, Vector3f& vec)
     fwd.RotationZ(hAngle);
 }
 
-void FPSController::PrePhysicsUpdateInternal(float /*deltaTime*/)
+void FPSController::PrePhysicsUpdateInternal(float deltaTime)
 {
     if (mBody.get() == 0)
     {
@@ -101,12 +101,20 @@ void FPSController::PrePhysicsUpdateInternal(float /*deltaTime*/)
 
     if (vec.SquareLength() > 0)
         {
-            float force = mBody->GetMass() * mAcceleration;
-            vec *= force;
+            //Bullet can't disable gravity for single objects, so the camera has a mass of 0
+            //Bullet does not support forces for Bodies without mass, so change the position statically
+            if(mBody->GetMass()==0){
+                UpdateStatic(deltaTime);
+            }
+            else
+            {
+                float force = mBody->GetMass() * mAcceleration;
+                vec *= force;
 
-            mBody->AddForce(vec.y() * fwd.Up());
-            mBody->AddForce(vec.x() * fwd.Right());
-            mBody->AddForce(vec.z() * Vector3f(0,0,1));
+                mBody->AddForce(vec.y() * fwd.Up());
+                mBody->AddForce(vec.x() * fwd.Right());
+                mBody->AddForce(vec.z() * Vector3f(0,0,1));
+            }
         }
 
     mHAngleDelta = 0.0;

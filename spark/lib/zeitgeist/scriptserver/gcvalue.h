@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: gcvalue.h 226 2010-12-14 17:07:14Z yxu $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

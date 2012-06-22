@@ -2,7 +2,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: rendercontrol_c.cpp 3 2008-11-21 02:38:08Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -28,8 +28,26 @@ FUNCTION(RenderControl, getFramesRendered)
     return obj->GetFramesRendered();
 }
 
+FUNCTION(RenderControl,setActive)
+{
+    bool inActive = true;
+
+    if (
+        (in.GetSize() < 0) ||
+        (in.GetSize() > 1) ||
+        ((in.GetSize() == 1) && (! in.GetValue(in[0], inActive)))
+        )
+        {
+            return false;
+        }
+
+    obj->SetActive(inActive);
+    return true;
+}
+
 void CLASS(RenderControl)::DefineClass()
 {
     DEFINE_BASECLASS(oxygen/SimControlNode);
     DEFINE_FUNCTION(getFramesRendered);
+    DEFINE_FUNCTION(setActive)
 }

@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: scriptserver.cpp 306 2012-04-16 09:46:12Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -403,7 +403,7 @@ ScriptServer::GetVariable(const string &varName)
 
             if (error)
             {
-                GetLog()->Debug() << "(ScriptServer) Ruby ERROR: "
+                GetLog()->Error() << "(ScriptServer) Ruby ERROR: "
                                   << RbGetError() << "\n";
                 v = Qnil;
             }
@@ -613,25 +613,6 @@ ScriptServer::RunInitScript(const string &fileName, const string &relPath,
 #endif
 
     ERunScriptErrorType result = eNotFound;
-
-    // Trying directory given in mRelPathPrefix
-    if (!mRelPathPrefix.empty())
-    {
-        result = RunInitScriptInternal(mRelPathPrefix, fileName, validDotDir, dotDir);
-        if (result == eOK)
-        {
-            GetLog()->Debug() << "(ScriptServer) : Ran init script '"
-                              << mRelPathPrefix << salt::RFile::Sep() << fileName << "'\n";
-            return true;
-        }
-        else if (result == eError)
-        {
-            GetLog()->Error() << "(ScriptServer) ERROR: Found error in init script '"
-                              << mRelPathPrefix << salt::RFile::Sep() << fileName << "'\n";
-            return false;
-        }
-    }
-
 
     if (validDotDir)
     {

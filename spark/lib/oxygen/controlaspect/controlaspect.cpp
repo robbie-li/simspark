@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: controlaspect.cpp 179 2010-02-28 01:33:40Z marianbuchta $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -46,7 +46,8 @@ ControlAspect::GetActiveScene()
 
     if (sceneServer.get() == 0)
     {
-        GetLog()->Error() << "(ControlAspect) cannot get SceneServer\n";
+        GetLog()->Error() << "(ControlAspect) cannot get SceneServer"
+						  << std::endl;
         return boost::shared_ptr<Scene>();
     }
 
@@ -54,7 +55,8 @@ ControlAspect::GetActiveScene()
 
     if (activeScene.get() == 0)
     {
-        GetLog()->Error() << "(ControlAspect) SceneServer reported no active scene\n";
+        GetLog()->Error() << "(ControlAspect) SceneServer reported no"
+			              << "active scene" << std::endl;
         return boost::shared_ptr<Scene>();
     }
 
@@ -62,7 +64,9 @@ ControlAspect::GetActiveScene()
 }
 
 void
-ControlAspect::GetControlAspect(Core::CachedLeafPath& aspect, const string& name)
+ControlAspect::GetControlAspect(
+								Core::CachedLeafPath& aspect,
+								const string& name)
 {
     static const string gcsPath = "/sys/server/gamecontrol/";
 

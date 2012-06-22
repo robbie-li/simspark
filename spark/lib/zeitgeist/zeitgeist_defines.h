@@ -2,7 +2,7 @@
 
    this file is part of rcssserver3D
    Copyright (C) 2009 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: zeitgeist_defines.h 56 2009-03-17 18:03:47Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

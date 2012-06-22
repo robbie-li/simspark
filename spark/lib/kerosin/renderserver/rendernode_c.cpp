@@ -3,7 +3,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: rendernode_c.cpp 207 2010-06-01 13:04:58Z sgvandijk $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

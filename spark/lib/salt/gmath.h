@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: gmath.h 293 2012-02-16 12:18:29Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -30,8 +30,8 @@
 #include <cmath>
 
 #ifdef WIN32
-#include <float.h>
-#include <limits>
+#include <cfloat>
+#include <climits>
 #endif
 
 namespace salt

@@ -2,7 +2,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: rendercontrol.h 57 2009-03-18 07:26:56Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -43,9 +43,17 @@ public:
     /** renders the scene at the end of each simulation cycle */
     virtual void EndCycle();
 
+    /** activates or deactivates the render control node */
+    virtual void SetActive(bool active);
+
+    /** returns true if render control node is active */
+    bool IsActive() const;
+
+    /** renders all CustomRender nodes */
+    void RenderCustom();
+
 protected:
     virtual void OnLink();
-    void RenderCustom();
 
 protected:
     /** cached reference to the RenderServer */
@@ -56,6 +64,9 @@ protected:
 
     /** total frames rendered */
     int mFramesRendered;
+
+    /** if false, the rendercontrol node will do nothing on EndCycle() */
+    bool mActive;
 };
 
 DECLARE_CLASS(RenderControl);

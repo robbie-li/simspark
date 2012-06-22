@@ -2,7 +2,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: spark.cpp 306 2012-04-16 09:46:12Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -38,7 +38,8 @@ using namespace salt;
 using namespace std;
 using namespace boost;
 
-Spark::Spark()
+Spark::Spark(const string& relPathPrefix) :
+    mRelPathPrefix(relPathPrefix)
 {
 }
 
@@ -100,7 +101,7 @@ bool
 Spark::Init(int argc, char** argv)
 {
     // See if user gave path prefix for init scripts
-    string relPathPrefix = "";
+    string relPathPrefix = mRelPathPrefix;
     for (int i = 1; i < argc; ++i)
     {
         if (strcmp(argv[i], "--init-script-prefix") == 0)
@@ -109,10 +110,10 @@ Spark::Init(int argc, char** argv)
         }
     }
 
-    mZeitgeist = shared_ptr<Zeitgeist>(new Zeitgeist("." PACKAGE_NAME, relPathPrefix));
-    mOxygen = shared_ptr<Oxygen>(new Oxygen(*mZeitgeist));
+    mZeitgeist = boost::shared_ptr<Zeitgeist>(new Zeitgeist("." PACKAGE_NAME, relPathPrefix));
+    mOxygen = boost::shared_ptr<Oxygen>(new Oxygen(*mZeitgeist));
 #if HAVE_KEROSIN_KEROSIN_H
-    mKerosin = shared_ptr<Kerosin>(new Kerosin(*mZeitgeist));
+    mKerosin = boost::shared_ptr<Kerosin>(new Kerosin(*mZeitgeist));
 #endif
 
     // run the spark init script

@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2004 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: inputsystem.cpp 3 2008-11-21 02:38:08Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -20,6 +20,8 @@
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 #include "inputsystem.h"
+
+#include <boost\thread\locks.hpp>
 
 using namespace kerosin;
 using namespace zeitgeist;
@@ -50,6 +52,7 @@ InputSystem::AddInput(const Input& input)
 bool
 InputSystem::GetInput(Input& input)
 {
+    boost::unique_lock<boost::shared_mutex> lock(mMutex);
     static bool hasDoneTimer = false;
     if (mInputQueue.size() > 0)
     {
@@ -73,6 +76,7 @@ InputSystem::GetInput(Input& input)
 void
 InputSystem::AddInputInternal(const Input& input)
 {
+    boost::unique_lock<boost::shared_mutex> lock(mMutex);
     mInputQueue.push_back(input);
 }
 

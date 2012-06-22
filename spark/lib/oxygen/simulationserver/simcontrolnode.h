@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: simcontrolnode.h 132 2010-01-01 22:01:05Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -66,6 +66,9 @@ public:
 
     /** called when the current simulation cycle ends */
     virtual void EndCycle() {};
+
+    /** called once instead of StartCycle, SenseAgent, ActAgent, EndCycle and WaitCycle when the simulation is paused */
+    virtual void WaitCycle() {};
 
     float GetTime() const { return mTime; }
 

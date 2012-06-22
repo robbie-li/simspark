@@ -4,7 +4,7 @@
    Thu Dec 31 2009
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2004-2009 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: agentproxy.cpp 231 2010-12-16 11:27:45Z yxu $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

@@ -2,7 +2,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: hingejoint.h 246 2011-02-18 18:44:14Z sgvandijk $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

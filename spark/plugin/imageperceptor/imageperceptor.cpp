@@ -2,7 +2,7 @@
 
    this file is part of rcssserver3D
    Copyright (C) 2008 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: imageperceptor.cpp 238 2010-12-17 00:23:17Z yxu $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

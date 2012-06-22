@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: core.cpp 179 2010-02-28 01:33:40Z marianbuchta $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -142,7 +142,7 @@ void Core::Construct(const boost::weak_ptr<Core>& self)
     mLogServer->AddStream(&cerr, LogServer::eError);
 
     mLogServer->AddStream(&cout,
-                          LogServer::eNormal |
+                          LogServer::eNormal | LogServer::eAll |
                           LogServer::eWarning
                           );
 
@@ -228,6 +228,11 @@ void Core::Desctruct()
     mFileServer.reset();
     mLogServer.reset();
     mScriptServer.reset();
+}
+
+void Core::Remove()
+{
+    mSelf.reset();
 }
 
 boost::shared_ptr<CoreContext> Core::CreateContext()

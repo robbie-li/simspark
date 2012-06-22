@@ -3,7 +3,7 @@
    this file is part of rcssserver3D
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2004-2008 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: staticmeshiniteffector.cpp 181 2010-02-28 10:55:34Z marianbuchta $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

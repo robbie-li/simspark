@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: core.h 56 2009-03-17 18:03:47Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -212,6 +212,9 @@ public:
     /** Destructs the core, i.e. unlinks the hierarchy below the root
         object */
     void Desctruct();
+
+	/** Resets the (strong) self pointer. */
+    void Remove();
 
     /** creates a context for this Core */
     boost::shared_ptr<CoreContext> CreateContext();

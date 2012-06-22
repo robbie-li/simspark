@@ -2,7 +2,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: spark.h 291 2012-02-14 15:48:05Z sgvandijk $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -72,7 +72,11 @@ namespace spark
 class SPARK_API Spark
 {
 public:
-    Spark();
+    
+    /** Constructor*/
+    Spark(const std::string& relPathPrefix = std::string(""));
+
+    /** Destructor. */
     virtual ~Spark();
 
     /** inits the Spark lib, returns true on success, has to be called once
@@ -139,6 +143,8 @@ protected:
 #if HAVE_KEROSIN_KEROSIN_H
     boost::shared_ptr<kerosin::Kerosin> mKerosin;
 #endif
+
+    std::string mRelPathPrefix;
 };
 
 } // namespace kerosin

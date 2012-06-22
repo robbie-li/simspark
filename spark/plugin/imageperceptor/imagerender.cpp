@@ -2,7 +2,7 @@
 
    this file is part of rcssserver3D
    Copyright (C) 2008 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: imagerender.cpp 240 2010-12-17 00:24:51Z yxu $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

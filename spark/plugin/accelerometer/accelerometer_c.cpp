@@ -2,7 +2,7 @@
 
    this file is part of rcssserver3D
    Copyright (C) 2008 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: accelerometer_c.cpp 317 2012-05-22 23:17:21Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2004 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: random.h 299 2012-03-06 23:50:21Z yxu $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

@@ -4,7 +4,7 @@
    Fri May 9 2003
    Copyright (C) 2002,2003 Koblenz University
    Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: logserver.h 56 2009-03-17 18:03:47Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -75,8 +75,9 @@ public:
 
         @param stream   the stream to add
         @param mask     the (new) priority mask for the stream
+        @param syncStream if true, stream will be synced too
     */
-    void AddStream(std::ostream *stream, unsigned int mask = eAll);
+    void AddStream(std::ostream *stream, unsigned int mask = eAll, bool syncStream = false);
 
     /** removes a stream from the list of streams.
         @param stream   the stream to remove

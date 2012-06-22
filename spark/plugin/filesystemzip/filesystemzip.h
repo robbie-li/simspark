@@ -4,7 +4,7 @@ this file is part of rcssserver3D
 Fri May 9 2003
 Copyright (C) 2002,2003 Koblenz University
 Copyright (C) 2003 RoboCup Soccer Server 3D Maintenance Group
-$Id$
+$Id: filesystemzip.h 3 2008-11-21 02:38:08Z hedayat $
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #define FILESYSTEMZIP_H__
 
 /*      \class FileSystemZIP
-        $Id$
+        $Id: filesystemzip.h 3 2008-11-21 02:38:08Z hedayat $
 
         FileSystemZIP - The ZIP File System
 

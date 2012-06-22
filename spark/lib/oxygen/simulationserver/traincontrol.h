@@ -3,7 +3,7 @@
    this file is part of rcssserver3D
    Sat April 12 2008
    Copyright (C) 2008 RoboCup Soccer Server 3D Maintenance Group
-   $Id$
+   $Id: traincontrol.h 57 2009-03-18 07:26:56Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

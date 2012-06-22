@@ -2,7 +2,7 @@
    this file is part of rcssserver3D
    Fri May 9 2003
    Copyright (C) 2003 Koblenz University
-   $Id$
+   $Id: rendercontrol.cpp 287 2012-01-21 22:56:08Z hedayat $
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -33,6 +33,7 @@ RenderControl::RenderControl()
     : SimControlNode()
 {
     mFramesRendered = 0;
+    mActive = true;
 }
 
 RenderControl::~RenderControl()
@@ -78,6 +79,7 @@ RenderControl::RenderCustom()
 void RenderControl::EndCycle()
 {
     if (
+        (!IsActive()) ||
         (mOpenGLServer.expired()) ||
         (mRenderServer.expired())
         )
@@ -100,4 +102,19 @@ int
 RenderControl::GetFramesRendered() const
 {
     return mFramesRendered;
+}
+
+void 
+RenderControl::SetActive(bool active)
+{
+    mActive = active;
+
+    GetLog()->Debug() 
+        << "(RenderControl) Render control node " << (active ? "activated" : "deactivated") << "\n";
+}
+
+bool 
+RenderControl::IsActive() const
+{
+    return mActive;
 }
